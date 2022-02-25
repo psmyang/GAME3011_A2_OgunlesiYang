@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Lock : MonoBehaviour
 {
@@ -11,6 +12,11 @@ public class Lock : MonoBehaviour
     public bool Unlocked = false;
     public int CurrentOrder = 1;
     bool Started = false;
+    public float PlayerSkill = 1;
+    [SerializeField] Text SkillLevel;
+
+   
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +24,7 @@ public class Lock : MonoBehaviour
         StartCoroutine(ResetPins());
     }
 
+   
     IEnumerator ResetPins()
     {
         while (true)
@@ -29,7 +36,7 @@ public class Lock : MonoBehaviour
                 ResetLock();
             }
 
-            if(Started || FindObjectOfType<GameMana>().Difficulty == 1)
+            if (Started || FindObjectOfType<GameMana>().Difficulty == 1)
             {
                 ResetTime2 = 7.5f;
                 yield return new WaitForSeconds(ResetTime2);
@@ -42,6 +49,12 @@ public class Lock : MonoBehaviour
                 yield return new WaitForSeconds(ResetTime3);
                 ResetLock();
             }
+
+            //if (Started)
+            //{
+            //    yield return new WaitForSeconds(ResetTime);
+            //    ResetLock();
+            //}
             yield return false;
         }
     }
@@ -78,7 +91,7 @@ public class Lock : MonoBehaviour
     {
         for (int i = 0; i <5; i++)
         {
-            int RandOrder = Random.Range(-1, 5);
+            int RandOrder = Random.Range(1, 5);
             if (!hasOrder(RandOrder))
             {
                 Pins[i].Order = RandOrder;
@@ -136,6 +149,26 @@ public class Lock : MonoBehaviour
         if (DoneTry())
         {
             ResetLock();
+        }
+    }
+
+    public void SkillUp()
+    {
+        if (PlayerSkill < 3)
+        {
+            PlayerSkill = PlayerSkill + 1;
+            SkillLevel.text = PlayerSkill.ToString();
+            print(PlayerSkill);
+        }
+    }
+
+    public void SkillDown()
+    {
+        if (PlayerSkill > 1)
+        {
+            PlayerSkill = PlayerSkill - 1;
+            SkillLevel.text = PlayerSkill.ToString();
+            print(PlayerSkill);
         }
     }
 }
