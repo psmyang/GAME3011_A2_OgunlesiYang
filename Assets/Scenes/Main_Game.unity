@@ -2334,8 +2334,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 708, y: 275}
-  m_SizeDelta: {x: 267, y: 127}
+  m_AnchoredPosition: {x: 776, y: 312}
+  m_SizeDelta: {x: 267, y: 109.1754}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &850767526
 MonoBehaviour:
@@ -2487,7 +2487,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &850767527
 MonoBehaviour:
@@ -4015,8 +4015,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 910, y: 410}
-  m_SizeDelta: {x: 267, y: 127}
+  m_AnchoredPosition: {x: 910, y: 363}
+  m_SizeDelta: {x: 267, y: 95.987}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1755693313 stripped
 MonoBehaviour:
