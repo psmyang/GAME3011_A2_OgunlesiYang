@@ -1024,6 +1024,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b137ac6946e6f945afd8136c9927d6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Level_Select: {fileID: 1100128170}
   Difficulty: 0
 --- !u!4 &256462509
 Transform:
@@ -2191,9 +2192,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3edc57ccdaae9894a85a928c9fd205f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ResetTime1: 13
-  ResetTime2: 6
-  ResetTime3: 2
+  ResetTime1: 10
+  ResetTime2: 7.5
+  ResetTime3: 5
   Pins:
   - {fileID: 730080675}
   - {fileID: 1477156027}
@@ -2481,6 +2482,18 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 1731281551}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 56635338}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -4012,7 +4025,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1191029224}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
@@ -4037,6 +4050,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2105111394}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &1731281553
 MonoBehaviour:

@@ -7,6 +7,7 @@ public class GameMana : MonoBehaviour
 {
     private static GameMana instance;
 
+
     private void Awake()
     {
         if (instance != null && instance != this)

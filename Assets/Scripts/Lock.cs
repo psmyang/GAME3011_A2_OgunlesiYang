@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Lock : MonoBehaviour
 {
-    [SerializeField] float ResetTime1 = 10f;
-    [SerializeField] float ResetTime2 = 7.5f;
-    [SerializeField] float ResetTime3 = 5f;
+    [SerializeField] float ResetTime1 = 0f;
+    [SerializeField] float ResetTime2 = 0f;
+    [SerializeField] float ResetTime3 = 0f;
     public LockButton[] Pins;
     public bool Unlocked = false;
     public int CurrentOrder = 1;
@@ -24,18 +24,21 @@ public class Lock : MonoBehaviour
         {
             if (Started || FindObjectOfType<GameMana>().Difficulty == 0)
             {
+                ResetTime1 = 10f;
                 yield return new WaitForSeconds(ResetTime1);
                 ResetLock();
             }
 
             if(Started || FindObjectOfType<GameMana>().Difficulty == 1)
             {
+                ResetTime2 = 7.5f;
                 yield return new WaitForSeconds(ResetTime2);
                 ResetLock();
             }
 
             if (Started || FindObjectOfType<GameMana>().Difficulty == 2)
             {
+                ResetTime3 = 5f;
                 yield return new WaitForSeconds(ResetTime3);
                 ResetLock();
             }
