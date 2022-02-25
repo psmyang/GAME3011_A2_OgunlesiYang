@@ -2386,8 +2386,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3edc57ccdaae9894a85a928c9fd205f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ResetTime1: 5
-  ResetTime2: 5
+  ResetTime1: 10
+  ResetTime2: 7.5
   ResetTime3: 5
   Pins:
   - {fileID: 730080675}
