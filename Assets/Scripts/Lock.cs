@@ -12,7 +12,7 @@ public class Lock : MonoBehaviour
     public bool Unlocked = false;
     public int CurrentOrder = 1;
     bool Started = false;
-    public float PlayerSkill = 1;
+    public float PlayerSkill = 0;
     [SerializeField] Text SkillLevel;
 
    
@@ -91,7 +91,7 @@ public class Lock : MonoBehaviour
     {
         for (int i = 0; i <5; i++)
         {
-            int RandOrder = Random.Range(1, 5);
+            int RandOrder = Random.Range(-1, 5);
             if (!hasOrder(RandOrder))
             {
                 Pins[i].Order = RandOrder;
