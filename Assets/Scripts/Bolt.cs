@@ -31,8 +31,8 @@ public class Bolt : MonoBehaviour
             if(LockMana.Unlocked)
             {
                 MaxX = -2.0f;
-                Win_Panel.SetActive(true);
 
+                StartCoroutine(ShowWinPanel());
             }
             else
             {
@@ -59,5 +59,11 @@ public class Bolt : MonoBehaviour
     void OnMouseUp()
     {
         isUsing = false;
+    }
+
+    public IEnumerator ShowWinPanel()
+    {
+        yield return new WaitForSeconds(2f);
+        Win_Panel.SetActive(true);
     }
 }

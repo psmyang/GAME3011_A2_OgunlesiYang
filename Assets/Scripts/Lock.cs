@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Lock : MonoBehaviour
 {
-    [SerializeField] float ResetTime = 10;
+    [SerializeField] float ResetTime1 = 10f;
+    [SerializeField] float ResetTime2 = 7.5f;
+    [SerializeField] float ResetTime3 = 5f;
     public LockButton[] Pins;
     public bool Unlocked = false;
     public int CurrentOrder = 1;
@@ -20,9 +22,21 @@ public class Lock : MonoBehaviour
     {
         while (true)
         {
-            if (Started)
+            if (Started || FindObjectOfType<GameMana>().Difficulty == 0)
             {
-                yield return new WaitForSeconds(ResetTime);
+                yield return new WaitForSeconds(ResetTime1);
+                ResetLock();
+            }
+
+            if(Started || FindObjectOfType<GameMana>().Difficulty == 1)
+            {
+                yield return new WaitForSeconds(ResetTime2);
+                ResetLock();
+            }
+
+            if (Started || FindObjectOfType<GameMana>().Difficulty == 2)
+            {
+                yield return new WaitForSeconds(ResetTime3);
                 ResetLock();
             }
             yield return false;
@@ -59,16 +73,16 @@ public class Lock : MonoBehaviour
 
     void AssignOrder()
     {
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i <5; i++)
         {
-            int RandOrder = Random.Range(1, 6);
+            int RandOrder = Random.Range(-1, 5);
             if (!hasOrder(RandOrder))
             {
                 Pins[i].Order = RandOrder;
-                if (FindObjectOfType<GameMana>().Difficulty > 0)
-                {
-                    FindObjectOfType<GameMana>().Difficulty--;
-                }
+                //if (FindObjectOfType<GameMana>().Difficulty > 0)
+                //{
+                //    FindObjectOfType<GameMana>().Difficulty--;
+                //}
             }
             else
             {
@@ -112,7 +126,7 @@ public class Lock : MonoBehaviour
         {
             ResetLock(order);
         }
-        if (CurrentOrder == 6)
+        if (CurrentOrder == 5)
         {
             Unlocked = true;
         }
